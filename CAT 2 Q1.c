@@ -4,36 +4,28 @@ AUTHOR:TIVA JEPKOSGEI
 REG NO:CT101/G/23447/24
 DATE:7/11/24
 */
-
-#include <stdio.h>
-#include <string.h>
-
-// Define the employee structure
-struct employee {
-    char name[25];
-    int id;
-    char department[20];
-    float salary;
-    char email[50];
-};
-
-int main() {
-    // Declare and initialize an employee variable
-    struct employee emp = {
-        "John Doe",
-        12345,
-        "Human Resources",
-        55000.50,
-        "john.doe@company.com"
-    };
-
-    // Print the employee details
-    printf("Name: %s\n", emp.name);
-    printf("ID: %d\n", emp.id);
-    printf("Department: %s\n", emp.department);
-    printf("Salary: %.2f\n", emp.salary);
-    printf("Email: %s\n", emp.email);
-
-    return 0;
+//structure
+#include<stdio.h>
+#include<string.h>
+struct employee{
+	char name[25];
+	int id;
+	char department[20];
+	float salary;
+	char email[50];
+}employee;
+//struct employee
+int main(){
+	strcpy(employee.name,"John Doe");
+	employee.id=12345;
+strcpy(employee.department,"Human Resources");
+employee.salary=55000.50;
+strcpy(employee.email,"john.doe@company.com");
+printf("name:%s\n",employee.name);
+printf("id:%d\n",employee.id);
+printf("department:%s\n",employee.department);
+printf("salary:%f\n",employee.salary);
+printf("email:%s\n",employee.email);
+return 0; 
 }
-    
+       
