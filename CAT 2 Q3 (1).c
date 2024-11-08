@@ -3,32 +3,34 @@ AUTHOR:TIVA JEPKOSGEI
 REG NO:CT101/G/23447/24
 DATE:7/11/24
 */
-#include <stdio.h>
-
-int main() {
-    float hours_worked, gross_pay, tax, overtime_hours, overtime_pay;
-    const float hourly_rate = 12.00;
-    const float overtime_rate = 1.5;
-
-    printf("Enter hours worked: ");
-    scanf("%f", &hours_worked);
-
-    if (hours_worked <= 40) {
-        gross_pay = hours_worked * hourly_rate;
-    } else {
-        overtime_hours = hours_worked - 40;
-        overtime_pay = overtime_hours * hourly_rate * overtime_rate;
-        gross_pay = 40 * hourly_rate + overtime_pay;
-    }
-
-    if (gross_pay <= 600) {
-        tax = gross_pay * 0.15;
-    } else {
-        tax = 600 * 0.15 + (gross_pay - 600) * 0.2;
-    }
-
-    printf("Gross pay: $%.2f\n", gross_pay);
-    printf("Tax: $%.2f\n", tax);
-
-    return 0;
+#include<stdio.h>
+int main(){
+	float hoursworked;
+	float hourlywage;
+	float grosspay;
+	float overtimepay;
+	float taxes;
+	float netpay;
+		printf("enter hoursworked:");
+	scanf("%f",&hoursworked);
+	printf("enter hourlywage:");
+	scanf("%f",&hourlywage);
+	//grosspay
+	if(hoursworked<=40){
+		grosspay=hoursworked*hourlywage;
+	}else{
+		grosspay=(40*hourlywage)+(hoursworked-40)*(1.5*hourlywage);
+		}
+		//taxes
+	if(grosspay<=600){
+	taxes=0.15*grosspay;
+		}else{
+			taxes=(0.15*600)+(grosspay-600)*0.20;
+		}
+		//netpay
+		netpay=grosspay-taxes;
+		printf("grosspay:%.2f\n",grosspay);
+		printf("taxes:%.2f\n",taxes);
+		printf("netpay:%.2f\n",netpay);
+	return 0;
 }
